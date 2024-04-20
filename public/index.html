@@ -66,9 +66,13 @@
   <form id="form" action="">
     <input id="input" autocomplete="off" /><button>Send</button>
   </form>
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+
   <script>
-    let socket = io({ port: process.env.PORT });
+    document.addEventListener('DOMContentLoaded', () => {
+      let socket = io({ port: process.env.PORT });
+      // Socket.IOを使用した処理をここに追加
+    });
 
     const form = document.getElementById("form");
     const input = document.getElementById("input");
