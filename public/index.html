@@ -68,7 +68,7 @@
   </form>
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    let socket = io();
+    let socket = io({ port: process.env.PORT });
 
     const form = document.getElementById("form");
     const input = document.getElementById("input");
