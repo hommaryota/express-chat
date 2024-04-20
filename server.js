@@ -8,6 +8,16 @@ const PORT = 3000;
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html')
 })
+
+io.on('connection', (soket) => {
+  console.log('ユーザーが接続しました');
+
+  soket.on('chat message', (msg) => {
+    // console.log('message:' + msg);
+    io.emit('chat message', msg)
+  })
+})
+
 server.listen(PORT, () => {
   console.log('listening on *:3000');
 })
