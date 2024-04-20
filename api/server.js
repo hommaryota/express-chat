@@ -9,10 +9,10 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html')
 })
 
-io.on('connection', (soket) => {
+io.on('connection', (socket) => {
   console.log('ユーザーが接続しました');
 
-  soket.on('chat message', (msg) => {
+  socket.on('chat message', (msg) => {
     // console.log('message:' + msg);
     io.emit('chat message', msg)
   })
