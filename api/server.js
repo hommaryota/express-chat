@@ -3,7 +3,7 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const io = require('socket.io')(server);
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // public ディレクトリを静的ファイルの配信先として設定
 app.use(express.static('public'));
